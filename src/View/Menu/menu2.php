@@ -53,12 +53,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link px-2">
+                    <a href="index.php?page=list-subject" class="nav-link px-2">
                         <i class="material-icons icon"> insert_chart </i
                         ><span class="text">Charts</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link px-2">
+                    <a href="index.php?page=list-score" class="nav-link px-2">
                         <i class="material-icons icon">
                             settings
                         </i>
@@ -66,7 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link px-2">
+                    <a href="index.php?page=view-score" class="nav-link px-2">
                         <i class="material-icons icon">
                             pages
                         </i>

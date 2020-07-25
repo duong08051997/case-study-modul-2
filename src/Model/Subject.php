@@ -7,16 +7,12 @@ namespace Web\Model;
 class Subject
 {
     protected $id;
-    protected $maths;
-    protected $physical;
-    protected $chemistry;
-    protected $english;
-    public function __construct($maths,$physical,$chemistry,$english)
+    protected $name;
+    protected $description;
+    public function __construct($name,$description)
     {
-        $this->maths=$maths;
-        $this->physical=$physical;
-        $this->chemistry=$chemistry;
-        $this->english=$english;
+        $this->name=$name;
+        $this->description=$description;
     }
 
     /**
@@ -38,65 +34,33 @@ class Subject
     /**
      * @return mixed
      */
-    public function getMaths()
+    public function getName()
     {
-        return $this->maths;
+        return $this->name;
     }
 
     /**
-     * @param mixed $maths
+     * @param mixed $name
      */
-    public function setMaths($maths)
+    public function setName($name)
     {
-        $this->maths = $maths;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPhysical()
-    {
-        return $this->physical;
-    }
-
-    /**
-     * @param mixed $physical
-     */
-    public function setPhysical($physical)
-    {
-        $this->physical = $physical;
+        $this->name = $name;
     }
 
     /**
      * @return mixed
      */
-    public function getChemistry()
+    public function getDescription()
     {
-        return $this->chemistry;
+        return $this->description;
     }
 
     /**
-     * @param mixed $chemistry
+     * @param mixed $description
      */
-    public function setChemistry($chemistry)
+    public function setDescription($description)
     {
-        $this->chemistry = $chemistry;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEnglish()
-    {
-        return $this->english;
-    }
-
-    /**
-     * @param mixed $english
-     */
-    public function setEnglish($english)
-    {
-        $this->english = $english;
+        $this->description = $description;
     }
 
 }

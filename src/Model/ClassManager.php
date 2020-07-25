@@ -16,7 +16,6 @@ class ClassManager
     public function getAllClass()
     {  $sql = "SELECT * FROM tbl_class";
         $stmt = $this->database->query($sql);
-        $stmt->execute();
         $data = $stmt->fetchAll();
         $classes = [];
         foreach ($data as $item) {

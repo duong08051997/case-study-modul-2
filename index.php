@@ -3,6 +3,8 @@ session_start();
 
 use Web\Controller\ClassController;
 use Web\Controller\StudentController;
+use Web\Controller\ScoreController;
+use Web\Controller\SubjectController;
 use Web\Mid\Auth;
 
 require __DIR__ . "/vendor/autoload.php";
@@ -12,6 +14,8 @@ $auth->isLogin();
 
 $classController = new ClassController();
 $studentController = new StudentController();
+$subjectController = new SubjectController();
+$scoreController = new ScoreController();
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
 ?>
 <!doctype html>
@@ -63,6 +67,24 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
                 break;
             case "search-student":
                 $studentController->searchStudent();
+                break;
+            case "list-subject":
+                $subjectController->getAllSubject();
+                break;
+            case "add-subject":
+                $subjectController->addSubject();
+                break;
+            case "update-subject":
+                $subjectController->updateStudent();
+                break;
+            case "delete-subject":
+                $subjectController->deleteSubject();
+                break;
+            case "view-score":
+                $scoreController->viewScore();
+                break;
+            case "list-score":
+                $scoreController->getAllScore();
                 break;
             default:
                 $classController->getAllClass();

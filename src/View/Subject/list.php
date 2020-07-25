@@ -1,4 +1,4 @@
-<a href="index.php?page=add-student" class="btn btn-success">ADD STUDENT</a>
+<a href="index.php?page=add-subject" class="btn btn-success">ADD SUBJECT</a>
 <div class="pt-3"></div>
 <div class="conn">
 
@@ -8,40 +8,32 @@
     <tr>
         <th>STT</th>
         <th>Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Address</th>
-        <th>Email</th>
-        <th>Action</th>
+        <th>Description</th>
         <th></th>
 
     </tr>
     </thead>
-    <?php if (empty($students)) : ?>
+    <?php if (empty($subjects)) : ?>
         <tr>
             <td>No data</td>
         </tr>
     <?php else: ?>
-        <?php foreach ($students as $key => $student): ?>
+        <?php foreach ($subjects as $key => $subject): ?>
             <tr >
                 <td><?php echo ++$key ?></td>
                 <td>
-                    <a style="font-size: 120%"
-                       href="index.php?page=view-score&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>
+                    <?php echo $subject->getName() ?>
                 </td>
-                <td><?php echo $student->getAge() ?></td>
-                <td><?php echo $student->getGender() ?></td>
-                <td><?php echo $student->getAddress() ?></td>
-                <td><?php echo $student->getEmail() ?></td>
+                <td><?php echo $subject->getDescription() ?></td>
                 <td style="text-align: center">
-                    <a href="index.php?page=delete-student&id=<?php echo $student->getId() ?>"
+                    <a href="index.php?page=delete-subject&id=<?php echo $subject->getId() ?>"
                        onclick="return confirm('are you sure?')"
                        class="btn btn-danger <?php if ($_SESSION['userLogin']['username'] === 'admin'): ?>
                        d-inline
                        <?php else: ?>
                         d-none
                        <?php endif; ?>">DELETE</a>
-                    <a href="index.php?page=update-student&id=<?php echo $student->getId() ?>"
+                    <a href="index.php?page=update-subject&id=<?php echo $subject->getId() ?>"
                        class="btn btn-primary">UPDATE</a>
                 </td>
             </tr>

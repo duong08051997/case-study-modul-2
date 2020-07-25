@@ -1,4 +1,5 @@
-<a href="index.php?page=add-student" class="btn btn-success">ADD STUDENT</a>
+
+<a href="index.php?page=add-score" class="btn btn-success">ADD SCORE</a>
 <div class="pt-3"></div>
 <div class="conn">
 
@@ -6,33 +7,34 @@
 <table class="table table-hover " style="width: 120%">
     <thead class="table-dark text-center">
     <tr>
-        <th>STT</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Address</th>
-        <th>Email</th>
-        <th>Action</th>
-        <th></th>
-
+        <th>Student Name</th>
+        <th>Subject Name</th>
+        <th>Score</th>
+        <th>action</th>
     </tr>
     </thead>
-    <?php if (empty($students)) : ?>
+    <?php if (empty($scores)) : ?>
         <tr>
             <td>No data</td>
         </tr>
     <?php else: ?>
-        <?php foreach ($students as $key => $student): ?>
+        <?php foreach ($scores as $key => $score): ?>
             <tr >
-                <td><?php echo ++$key ?></td>
                 <td>
-                    <a style="font-size: 120%"
-                       href="index.php?page=view-score&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>
+                    <select name="student_id">
+                        <?php foreach ($students as $student) : ?>
+                            <option value="<?php echo $student->getId(); ?>"><?php echo $student->getName(); ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </td>
-                <td><?php echo $student->getAge() ?></td>
-                <td><?php echo $student->getGender() ?></td>
-                <td><?php echo $student->getAddress() ?></td>
-                <td><?php echo $student->getEmail() ?></td>
+                <td>
+                    <select name="subject_id">
+                        <?php foreach ($subjects as $subject) : ?>
+                            <option value="<?php echo $subject->getId(); ?>"><?php echo $subject->getName(); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+                <td><?php echo $score->getScore() ?></td>
                 <td style="text-align: center">
                     <a href="index.php?page=delete-student&id=<?php echo $student->getId() ?>"
                        onclick="return confirm('are you sure?')"
@@ -48,3 +50,4 @@
         <?php endforeach; ?>
     <?php endif; ?>
 </table>
+
