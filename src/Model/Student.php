@@ -13,7 +13,8 @@ class Student
     protected $address;
     protected $email;
     protected $class_id;
-    public function __construct($name,$age,$gender,$address,$email,$class_id)
+    protected $image;
+    public function __construct($name,$age,$gender,$address,$email,$class_id,$image)
     {
         $this->name=$name;
         $this->age=$age;
@@ -21,6 +22,23 @@ class Student
         $this->address=$address;
         $this->email=$email;
         $this->class_id=$class_id;
+        $this->image = $image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 
     /**

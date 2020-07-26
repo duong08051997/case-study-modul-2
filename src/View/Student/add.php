@@ -1,6 +1,7 @@
 
-<form method="post">
-    <div class="form-group" >
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="my-file" class="form-group">
+   <div class="form-group" >
         <label for="exampleInputEmail1">Student Name: </label>
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Student Name">
     </div>

@@ -20,7 +20,7 @@ class StudentManager
         $data = $stmt->fetchAll();
         $students = [];
         foreach ($data as $item) {
-            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id']);
+            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id'],$item['image']);
             $student->setId($item['id']);
             array_push($students, $student);
         }
@@ -28,7 +28,7 @@ class StudentManager
     }
     public function addStudent($student)
     {
-        $sql = "INSERT INTO tbl_student( `name`, `age`, `gender`, `address`, `email`,`class_id`) VALUES (:name ,:age, :gender, :address, :email,:class_id)";
+        $sql = "INSERT INTO tbl_student( `name`, `age`, `gender`, `address`, `email`,`class_id`,`image`) VALUES (:name ,:age, :gender, :address, :email,:class_id, :image)";
         $stmt = $this->database->prepare($sql);
         $stmt->bindParam(":name", $student->getName());
         $stmt->bindParam(":age", $student->getAge());
@@ -36,6 +36,7 @@ class StudentManager
         $stmt->bindParam(":address", $student->getAddress());
         $stmt->bindParam(":email", $student->getEmail());
         $stmt->bindParam(":class_id", $student->getClassId());
+        $stmt->bindParam(":image", $student->getImage());
         $stmt->execute();
     }
     public function getStudentId($id)
@@ -49,7 +50,7 @@ class StudentManager
 
     public function updateStudent($student)
     {
-        $sql = "UPDATE `tbl_student` SET `name`= :name,`age`= :age,`gender`= :gender,`address`= :address,`email`= :email ,`class_id`= :class_id WHERE `id` =:id";
+        $sql = "UPDATE `tbl_student` SET `name`= :name,`age`= :age,`gender`= :gender,`address`= :address,`email`= :email ,`class_id`= :class_id,`image` = :image WHERE `id` =:id";
         $stmt = $this->database->prepare($sql);
         $stmt->bindParam(":id", $student->getId());
         $stmt->bindParam(":name", $student->getName());
@@ -58,6 +59,7 @@ class StudentManager
         $stmt->bindParam(":address", $student->getAddress());
         $stmt->bindParam(":email", $student->getEmail());
         $stmt->bindParam(":class_id", $student->getClassId());
+        $stmt->bindParam(":image", $student->getImage());
         $stmt->execute();
     }
     public function deleteStudent($id)
@@ -76,7 +78,7 @@ class StudentManager
         $data = $stmt->fetchAll();
         $students = [];
         foreach ($data as $item) {
-            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id']);
+            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id'],$item['image']);
             array_push($students, $student);
         }
         return $students;
@@ -89,14 +91,14 @@ class StudentManager
         $data = $stmt->fetchAll();
         $students = [];
         foreach ($data as $item) {
-            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id']);
+            $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id'],$item['image']);
             array_push($students, $student);
         }
         return $students;
     }
     public function detailStudent($id)
     {
-        $sql = "SELECT tbl_student.name ,tbl_class.name,tbl_student.age,tbl_student.gender,tbl_student.address, tbl_subject.name, tbl_score.score  FROM tbl_subject 
+        $sql = "SELECT tbl_student.image, tbl_student.name ,tbl_class.name,tbl_student.age,tbl_student.gender,tbl_student.address, tbl_subject.name, tbl_score.score  FROM tbl_subject 
 INNER JOIN tbl_score ON tbl_subject.id = tbl_score.subject_id
 INNER JOIN tbl_student ON tbl_score.student_id = tbl_student.id 
 INNER JOIN tbl_class ON tbl_student.class_id = tbl_class.id WHERE tbl_student.id = :id";

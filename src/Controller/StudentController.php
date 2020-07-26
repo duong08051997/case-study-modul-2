@@ -29,13 +29,20 @@ class StudentController
             $classes = $this->classManager->getAllClass();
             include('src/View/Student/add.php');
         } else {
+            $file = $_FILES['my-file']['tmp_name'];
+            $path = "uploads/" . $_FILES['my-file']['name'];
+            if (move_uploaded_file($file, $path)) {
+                echo "Tải tập tin thành công";
+            } else {
+                echo "Tải tập tin thất bại";
+            }
             $name = $_REQUEST['name'];
             $age = $_REQUEST['age'];
             $gender = $_REQUEST['gender'];
             $address = $_REQUEST['address'];
             $email = $_REQUEST['email'];
             $class_id = $_REQUEST['class_id'];
-            $student = new Student($name, $age, $gender, $address, $email, $class_id);
+            $student = new Student($name, $age, $gender, $address, $email, $class_id,$path);
             $this->studentController->addStudent($student);
             header("location:index.php?page=list-student");
         }
@@ -48,6 +55,13 @@ class StudentController
             $student = $this->studentController->getStudentId($id);
             include('src/View/Student/update.php');
         } else {
+            $file = $_FILES['my-file']['tmp_name'];
+            $path = "uploads/" . $_FILES['my-file']['name'];
+            if (move_uploaded_file($file, $path)) {
+                echo "Tải tập tin thành công";
+            } else {
+                echo "Tải tập tin thất bại";
+            }
             $id = $_REQUEST['id'];
             $student = $this->studentController->getStudentId($id);
             $name = $_REQUEST['name'];
@@ -56,7 +70,7 @@ class StudentController
             $address = $_REQUEST['address'];
             $email = $_REQUEST['email'];
             $class_id = $_REQUEST['class_id'];
-            $student = new Student($name, $age, $gender, $address, $email, $class_id);
+            $student = new Student($name, $age, $gender, $address, $email, $class_id,$path);
             $student->setId($id);
             $this->studentController->updateStudent($student);
             header("location:index.php?page=list-student");

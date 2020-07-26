@@ -7,6 +7,7 @@
     <thead class="table-dark ">
     <tr>
         <th>STT</th>
+        <th>Image</th>
         <th>Name</th>
         <th>Age</th>
         <th>Gender</th>
@@ -25,6 +26,7 @@
         <?php foreach ($students as $key => $student): ?>
             <tr >
                 <td><?php echo ++$key ?></td>
+                <td><img src="<?php echo $student->getImage()?>" width="50" height="50"></td>
                 <td>
                     <a style="font-size: 120%"
                        href="index.php?page=detail-student&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>

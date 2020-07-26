@@ -1,5 +1,6 @@
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="my-file" class="form-group">
     <div class="form-group" >
         <label >Student Name: </label>
         <input type="text" class="form-control"  name="name" value="<?php echo $student['name']?>">
