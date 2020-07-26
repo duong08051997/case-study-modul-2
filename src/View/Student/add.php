@@ -20,7 +20,8 @@
     <div class="form-group" >
     <label for="exampleInputEmail1">Email: </label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="xxx@gmail.com">
-        <select name="class_id">
+        <label for="exampleInputEmail1">Class Name: </label>
+        <select name="class_id" class="form-control">
             <?php foreach ($classes as $class) : ?>
                 <option value="<?php echo $class->getId(); ?>"><?php echo $class->getName(); ?></option>
             <?php endforeach; ?>

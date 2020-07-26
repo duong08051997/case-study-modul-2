@@ -85,8 +85,9 @@ class StudentController
     function searchStudent(){
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             $keyword = $_POST['keyword'];
+            $classes = $this->classManager->getAllClass();
             $students = $this->studentController->searchStudent($keyword);
-            include_once 'src/View/Student/list.php';
+            include_once 'src/View/Student/search.php';
         }
     }
     public function detailStudent()

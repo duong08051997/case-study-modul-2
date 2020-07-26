@@ -1,6 +1,5 @@
-<a href="index.php?page=add-student&id=<?php echo $class['id'] ?>" class="btn btn-success">ADD STUDENT</a>
 <div class="pt-3"></div>
-<h2> Class : <?php echo $class['name'] ?></h2>
+<h2> Class : <?php echo $classes["name"] ?></h2>
 <div class="conn">
 
 </div>
@@ -8,6 +7,7 @@
     <thead class="table-dark text-center">
     <tr>
         <th>STT</th>
+        <th>Img</th>
         <th>Name</th>
         <th>Age</th>
         <th>Gender</th>
@@ -28,6 +28,7 @@
                        as $key => $student): ?>
             <tr >
                 <td><?php echo ++$key ?></td>
+                <td><img src="<?php echo $student->getImage()?>" width="50" height="50"  class="rounded-circle"></td>
                 <td>
                     <a style="font-size: 120%"
                        href="index.php?page=list-score&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>
@@ -51,3 +52,9 @@
         <?php endforeach; ?>
     <?php endif; ?>
 </table>
+<?php
+//echo "<pre>";
+//foreach ($classes as $class){
+//    echo $class->getName();
+//}
+//print_r($classes); ?>

@@ -24,7 +24,8 @@ $colors: (
   font-family: 'Poppins', sans-serif;
 }
 body {
-  height: 1000px;
+  //height: 1000px;
+  height: auto;
   @extend .bg-mattBlackDark;
   @extend .text-mattGray;
 }
@@ -81,7 +82,7 @@ body {
     }
   }
 }
-
+//
 @media (min-width: 992px) {
   .wrapper {
     .sideMenu {

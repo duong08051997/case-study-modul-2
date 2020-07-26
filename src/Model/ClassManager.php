@@ -57,4 +57,15 @@ class ClassManager
         $stmt->bindParam(":id",$id);
         $stmt->execute();
     }
+
+    public function detailClass($id)
+    {
+        $sql = "SELECT tbl_class.name,tbl_student.image, tbl_student.name ,tbl_student.age,tbl_student.gender,tbl_student.address FROM tbl_class 
+INNER JOIN tbl_student ON tbl_student.class_id = tbl_class.id WHERE tbl_class.id = :id";
+
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

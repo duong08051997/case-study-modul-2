@@ -7,7 +7,7 @@ namespace Web\Model;
 class ClassRoom
 {
     protected $id;
-    protected $name;
+    public $name;
     protected $status;
     public function __construct($name,$status)
     {

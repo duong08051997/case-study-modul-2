@@ -1,4 +1,9 @@
-<a href="index.php?page=add-subject" class="btn btn-success">ADD SUBJECT</a>
+<div class="pt-3"></div>
+<a href="index.php?page=add-subject" class="btn btn-success <?php if ($_SESSION['userLogin']['username'] === 'admin'): ?>
+                       d-inline
+                       <?php else: ?>
+                        d-none
+                       <?php endif; ?>">ADD SUBJECT</a>
 <div class="pt-3"></div>
 <div class="conn">
 
@@ -7,7 +12,7 @@
     <thead class="table-dark ">
     <tr>
         <th>STT</th>
-        <th>Name</th>
+        <th>Subject Name</th>
         <th>Description</th>
         <th style="text-align: center">Action</th>
 
@@ -34,7 +39,11 @@
                         d-none
                        <?php endif; ?>">DELETE</a>
                     <a href="index.php?page=update-subject&id=<?php echo $subject->getId() ?>"
-                       class="btn btn-primary">UPDATE</a>
+                       class="btn btn-primary <?php if ($_SESSION['userLogin']['username'] === 'admin'): ?>
+                       d-inline
+                       <?php else: ?>
+                        d-none
+                       <?php endif; ?>">UPDATE</a>
                 </td>
             </tr>
         <?php endforeach; ?>

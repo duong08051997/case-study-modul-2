@@ -52,5 +52,14 @@ class ClassController
         $this->classController->deleteClass($id);
         header('location:index.php?page=list-class');
     }
+    public function detailClass()
+    {
+        if ($_SERVER['REQUEST_METHOD']=="GET") {
+            $id =$_REQUEST['class_id'];
+            $classes = $this->classController->detailClass($id);
+            include ("src/View/Class/detail.php");
+        }
+
+    }
 
 }

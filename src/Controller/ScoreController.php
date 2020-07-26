@@ -50,6 +50,13 @@ class ScoreController
             header("location:index.php?page=list-score");
         }
     }
+    public function deleteScore()
+    {
+        $student_id =$_POST['student_id'];
+        $subject_id=$_POST['subject_id'];
+        $this->scoreController->deleteScore($student_id,$subject_id);
+        header("location:index.php?page=list-score");
+    }
 
 
 }

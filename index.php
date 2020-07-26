@@ -28,7 +28,7 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>App Student Manager</title>
 </head>
 <body>
 <div class="container">
@@ -52,6 +52,9 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
                 break;
             case "delete-class":
                 $classController->deleteClass();
+                break;
+            case "detail-class":
+                $classController->detailClass();
                 break;
             case "list-student":
                 $studentController->getAllStudent();
@@ -91,6 +94,9 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
                 break;
             case "add-score":
                 $scoreController->add();
+                break;
+            case "delete-score":
+                $scoreController->deleteScore();
                 break;
             default:
                 $classController->getAllClass();

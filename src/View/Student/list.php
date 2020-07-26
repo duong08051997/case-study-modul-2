@@ -1,4 +1,9 @@
-<a href="index.php?page=add-student" class="btn btn-success">ADD STUDENT</a>
+<div class="pt-3"></div>
+<a href="index.php?page=add-student" class="btn btn-success <?php if ($_SESSION['userLogin']['username'] === 'admin'): ?>
+                       d-inline
+                       <?php else: ?>
+                        d-none
+                       <?php endif; ?>">ADD STUDENT</a>
 <div class="pt-3"></div>
 <div class="conn">
 
@@ -8,7 +13,7 @@
     <tr>
         <th>STT</th>
         <th>Image</th>
-        <th>Name</th>
+        <th>Student Name</th>
         <th>Age</th>
         <th>Gender</th>
         <th>Address</th>
@@ -26,7 +31,7 @@
         <?php foreach ($students as $key => $student): ?>
             <tr >
                 <td><?php echo ++$key ?></td>
-                <td><img src="<?php echo $student->getImage()?>" width="50" height="50"></td>
+                <td><img src="<?php echo $student->getImage()?>" width="50" height="50"  class="rounded-circle"></td>
                 <td>
                     <a style="font-size: 120%"
                        href="index.php?page=detail-student&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>
@@ -44,7 +49,11 @@
                         d-none
                        <?php endif; ?>">DELETE</a>
                     <a href="index.php?page=update-student&id=<?php echo $student->getId() ?>"
-                       class="btn btn-primary">UPDATE</a>
+                       class="btn btn-primary <?php if ($_SESSION['userLogin']['username'] === 'admin'): ?>
+                       d-inline
+                       <?php else: ?>
+                        d-none
+                       <?php endif; ?>">UPDATE</a>
                 </td>
             </tr>
         <?php endforeach; ?>

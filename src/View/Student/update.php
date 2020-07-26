@@ -20,7 +20,10 @@
     <div class="form-group" >
         <label >Email: </label>
         <input type="email" class="form-control" name="email" value="<?php echo $student['email']?>">
-        <select name="class_id">
+    </div>
+    <div class="form-group" style="margin-top: 10px" >
+        <label >Class Name: </label>
+        <select name="class_id" class="form-control">
             <?php foreach ($classes as $class) : ?>
                 <option value="<?php echo $class->getId(); ?>"><?php echo $class->getName(); ?></option>
             <?php endforeach; ?>

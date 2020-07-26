@@ -14,7 +14,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="navbar-nav ml-auto" method="post" action="index.php?page=search-student">
+        <form class="navbar-nav ml-auto" method="post" action="index.php?page=search-student&class_id=<?php echo $classes['id']?>">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -45,17 +45,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="index.php?page=list-subject" class="nav-link px-2">
+                        <i class="material-icons icon"> subject </i
+                        ><span class="text">Subject</span></a>
+                </li>
+                <li class="nav-item">
                     <a href="index.php?page=list-student" class="nav-link px-2">
                         <i class="material-icons icon">
                             person
                         </i>
                         <span class="text">Student</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=list-subject" class="nav-link px-2">
-                        <i class="material-icons icon"> subject </i
-                        ><span class="text">Subject</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="index.php?page=list-score" class="nav-link px-2">
