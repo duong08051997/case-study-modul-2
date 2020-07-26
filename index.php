@@ -68,6 +68,9 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
             case "search-student":
                 $studentController->searchStudent();
                 break;
+            case "detail-student":
+                $studentController->detailStudent();
+                break;
             case "list-subject":
                 $subjectController->getAllSubject();
                 break;
@@ -80,11 +83,14 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : "";
             case "delete-subject":
                 $subjectController->deleteSubject();
                 break;
-            case "view-score":
-                $scoreController->viewScore();
+            case "get-score":
+                $scoreController->getAllScore();
                 break;
             case "list-score":
-                $scoreController->getAllScore();
+                $scoreController->viewScore();
+                break;
+            case "add-score":
+                $scoreController->add();
                 break;
             default:
                 $classController->getAllClass();

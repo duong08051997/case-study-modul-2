@@ -54,19 +54,19 @@
                 </li>
                 <li class="nav-item">
                     <a href="index.php?page=list-subject" class="nav-link px-2">
-                        <i class="material-icons icon"> insert_chart </i
-                        ><span class="text">Charts</span></a>
+                        <i class="material-icons icon"> subject </i
+                        ><span class="text">Subject</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="index.php?page=list-score" class="nav-link px-2">
                         <i class="material-icons icon">
-                            settings
+                            list
                         </i>
-                        <span class="text">Settings</span>
+                        <span class="text">List Score</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?page=view-score" class="nav-link px-2">
+                    <a href="" class="nav-link px-2">
                         <i class="material-icons icon">
                             pages
                         </i>

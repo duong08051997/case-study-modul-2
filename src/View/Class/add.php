@@ -1,7 +1,7 @@
 
 <form method="post">
     <div class="form-group" >
-        <label for="exampleInputEmail1">Class Name</label>
+        <label for="exampleInputEmail1" class="">Class Name</label>
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Class Name">
     </div>
     <div class="form-group">

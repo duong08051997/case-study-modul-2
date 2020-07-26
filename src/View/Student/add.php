@@ -9,10 +9,10 @@
         <input type="number" class="form-control" id="exampleInputPassword1" name="age">
     </div>
 
-    <label for="exampleInputEmail1">Gender: </label><br>
-    <input type="radio"  id="exampleInputEmail1" aria-describedby="emailHelp" name="gender" value="male" checked> Male<br>
-    <input type="radio"  id="exampleInputEmail1" aria-describedby="emailHelp" name="gender" value="female"> Female
-    <div class="form-group" >
+    <label for="exampleInputEmail1" class="radio-inline">Gender: </label><br>
+    <input type="radio"  id="exampleInputEmail1" aria-describedby="emailHelp" name="gender" value="male" checked> Male <br>
+    <input type="radio"  id="exampleInputEmail1" aria-describedby="emailHelp" name="gender" value="female" > Female <br>
+    <div class="form-group" style="margin-top: 15px">
     <label for="exampleInputEmail1">Address: </label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address" placeholder="Address">
     </div>

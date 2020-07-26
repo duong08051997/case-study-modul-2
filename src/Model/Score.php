@@ -3,7 +3,6 @@
 
 namespace Web\Model;
 
-
 class Score
 {
     protected $student_id;

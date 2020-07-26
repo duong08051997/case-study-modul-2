@@ -75,4 +75,14 @@ class StudentController
             include_once 'src/View/Student/list.php';
         }
     }
+    public function detailStudent()
+    {
+        if ($_SERVER['REQUEST_METHOD']=="GET") {
+            $id =$_REQUEST['student_id'];
+            $studentss = $this->studentController->detailStudent($id);
+            include ("src/View/Student/detail.php");
+        }
+
+
+    }
 }

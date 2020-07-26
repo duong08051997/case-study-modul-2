@@ -34,4 +34,18 @@ INNER JOIN tbl_student ON tbl_score.student_id = tbl_student.id ORDER BY tbl_stu
         $stmt = $this->database->query($sql);
         return $stmt->fetchAll();
     }
+
+    public function addScore($student_id,$subject_id,$score)
+    {
+        $sql = "INSERT INTO `tbl_score`(`student_id`, `subject_id`, `score`) VALUES (? , ?, ?)";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(1,$student_id);
+        $stmt->bindParam(2,$subject_id);
+        $stmt->bindParam(3,$score);
+        $stmt->execute();
+
+    }
+
+
+
 }

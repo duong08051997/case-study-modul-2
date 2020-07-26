@@ -94,4 +94,15 @@ class StudentManager
         }
         return $students;
     }
+    public function detailStudent($id)
+    {
+        $sql = "SELECT tbl_student.name ,tbl_class.name,tbl_student.age,tbl_student.gender,tbl_student.address, tbl_subject.name, tbl_score.score  FROM tbl_subject 
+INNER JOIN tbl_score ON tbl_subject.id = tbl_score.subject_id
+INNER JOIN tbl_student ON tbl_score.student_id = tbl_student.id 
+INNER JOIN tbl_class ON tbl_student.class_id = tbl_class.id WHERE tbl_student.id = :id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id",$id);
+        $stmt->execute();
+       return $stmt->fetchAll();
+    }
 }

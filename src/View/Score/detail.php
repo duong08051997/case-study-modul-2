@@ -5,7 +5,7 @@
 
     </div>
     <table class="table table-hover " style="width: 120%">
-        <thead class="table-dark text-center">
+        <thead class="table-dark ">
         <tr>
             <th>Student Name</th>
             <th>Subject Name</th>

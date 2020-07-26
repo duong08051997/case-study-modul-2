@@ -4,12 +4,12 @@
 
 </div>
 <table class="table table-hover " style="width: 120%">
-    <thead class="table-dark text-center">
+    <thead class="table-dark ">
     <tr>
         <th>STT</th>
         <th>Name</th>
         <th>Description</th>
-        <th></th>
+        <th style="text-align: center">Action</th>
 
     </tr>
     </thead>
