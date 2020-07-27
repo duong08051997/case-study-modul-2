@@ -84,6 +84,8 @@ class StudentController
     }
     function searchStudent(){
         if ($_SERVER['REQUEST_METHOD']=='POST'){
+            $id = $_REQUEST['id'];
+            $this->studentController->getStudentId($id);
             $keyword = $_POST['keyword'];
             $classes = $this->classManager->getAllClass();
             $students = $this->studentController->searchStudent($keyword);

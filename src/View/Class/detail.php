@@ -2,7 +2,7 @@
 <div class="conn">
 
 </div>
-<h2 style="color: dodgerblue"> Class: <?php echo $classes[0][0] ?></h2>
+<h2 style="color: #176719"> Class: <?php echo $classes[0][0] ?></h2>
 <table class="table table-hover " style="width: 120%">
     <thead class="table-dark ">
     <tr>

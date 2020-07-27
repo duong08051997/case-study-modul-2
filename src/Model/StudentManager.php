@@ -79,6 +79,7 @@ class StudentManager
         $students = [];
         foreach ($data as $item) {
             $student = new Student($item['name'], $item['age'], $item['gender'], $item['address'], $item['email'], $item['class_id'],$item['image']);
+           $student->setId($item['id']);
             array_push($students, $student);
         }
         return $students;

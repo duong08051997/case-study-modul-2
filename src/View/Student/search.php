@@ -31,7 +31,7 @@
                 <td><img src="<?php echo $student->getImage()?>" width="50" height="50"  class="rounded-circle"></td>
                 <td>
                     <a style="font-size: 120%"
-                       href="index.php?page=list-score&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>
+                       href="index.php?page=list-student&student_id=<?php echo $student->getId() ?>"><?php echo $student->getName() ?></a>
                 </td>
                 <td><?php echo $student->getAge() ?></td>
                 <td><?php echo $student->getGender() ?></td>
@@ -53,8 +53,3 @@
     <?php endif; ?>
 </table>
 <?php
-//echo "<pre>";
-//foreach ($classes as $class){
-//    echo $class->getName();
-//}
-//print_r($classes); ?>
